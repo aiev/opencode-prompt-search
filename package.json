@@ -1,0 +1,52 @@
+{
+  "name": "opencode-prompt-search",
+  "version": "0.1.0",
+  "description": "OpenCode TUI plugin: searchable prompt history with Ctrl+Shift+R",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aiev/opencode-prompt-search.git"
+  },
+  "homepage": "https://github.com/aiev/opencode-prompt-search#readme",
+  "bugs": {
+    "url": "https://github.com/aiev/opencode-prompt-search/issues"
+  },
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "tui",
+    "prompt-history",
+    "prompt-search",
+    "ctrl-r"
+  ],
+  "packageManager": "pnpm@10.2.0",
+  "exports": {
+    "./tui": {
+      "import": "./dist/tui.js"
+    }
+  },
+  "files": [
+    "dist",
+    "tui.js",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc --noEmit && node build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts",
+    "prepublishOnly": "pnpm build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "esbuild": "^0.25.0",
+    "tsx": "^4.22.3",
+    "typescript": "^5.9.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
